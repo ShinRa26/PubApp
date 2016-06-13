@@ -1,7 +1,7 @@
 from django.db import models
 
 class Pub(models.Model):
-	name = models.CharField(max_length=128)
+	name = models.CharField(max_length=128, unique=False)
 	address = models.CharField(max_length=128)
 	area = models.CharField(max_length=128)
 	county = models.CharField(max_length=128)
