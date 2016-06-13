@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from publist.models import Pub
 
-# Create your views here.
+def index(request):
+	return render(request, 'publist/index.html')
