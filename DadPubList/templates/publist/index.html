@@ -1,5 +1,10 @@
 {% extends 'publist/base.html' %}
 
 {% block content %}
-	<p>hello</p>
+	<div class="col-md-2 col-md-offset-5">
+		<form id="search-pub" method="post" action="{% url 'results' %}">
+			<input type="search"/>
+			<input class="button" type="submit" value="Submit"/> 
+		</form>
+	</div>
 {% endblock %}
