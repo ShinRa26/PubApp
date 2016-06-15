@@ -1,5 +1,13 @@
 {% extends 'publist/base.html' %}
 
 {% block content %}
+	<div class="col-md-2-offset-5">
+		<form id="addpub" method="post" action="{% url 'addpub' %}">
+			{%csrf_token %}
+			{{ pub_form.as_p }}
+			<input class="button" type="submit" name="Add Pub" value="Add Pub" />
+			<input class="button" type="submit" name="cancel" value="Cancel" onClick="parent.location='{% url 'index' %}'"/>
+		</form>
+	</div>
 
 {% endblock %}
