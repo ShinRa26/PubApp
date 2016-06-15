@@ -2,9 +2,9 @@
 
 {% block content %}
 	<div class="col-md-2 col-md-offset-5">
-		<form id="search-pub" method="post" action="{% url 'results' %}">
-			<input type="search"/>
-			<input class="button" type="submit" value="Submit"/> 
+		<form id="search-pub" method="get" action="{% url 'results' %}">
+			Search Pubs: <input type="text" name="q" id="id_q" value="{{ query }}"/>
+			<input type="submit" value="Submit"/> 
 		</form>
 	</div>
 {% endblock %}

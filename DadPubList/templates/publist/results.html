@@ -1,0 +1,45 @@
+{% extends 'publist/base.html' %}
+
+{% block content %}
+	<div class="table-responsive">
+		{% if results %}
+			<table class="table table-striped">
+				<thead>
+					<th>Pub Name</th>
+					<th>Address</th>
+					<th>Area</th>
+					<th>County</th>
+					<th>Visited This Year</th>
+					<th>Found Through App</th>
+				</thead>
+				<tbody>
+				{% for result in results %}
+					<tr>
+						<td>{{result.name}}</td>
+						<td>{{result.address}}</td>
+						<td>{{result.area}}</td>
+						<td>{{result.county}}</td>
+						{% if result.thisyear %}
+							<td>Yes</td>
+						{% else %}
+							<td>No</td>
+						{% endif %}
+						{% if result.fromapp %}
+							<td>Yes</td>
+						{% else %}
+							<td>No</td>
+						{% endif %}
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+			<div class="col-md-2 col-md-offset-5">
+				<h1 class="error">No Pubs found!</h3>
+				<div class="span12 text-center">
+					<a href="{% url 'index' %}">Back to Home</a>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}
