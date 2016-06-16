@@ -10,4 +10,5 @@ class AddPub(forms.ModelForm):
 	fromapp = forms.BooleanField(required=False)
 
 	class Meta:
+		model = Pub
 		fields = ('name', 'address', 'area', 'county', 'thisyear', 'fromapp')
