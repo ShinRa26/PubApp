@@ -1,7 +1,12 @@
 {% extends 'publist/base.html' %}
 
+{% block title %}
+	<title>Add a New Pub</title>
+{% endblock %}
+
 {% block content %}
-	<div class="col-md-2-offset-5">
+	<div class="col-md-2 col-md-offset-5">
+		<h1>Add a New Pub</h1>
 		<form id="addpub" method="post" action="{% url 'addpub' %}">
 			{% csrf_token %}
 			{{ pub_form.as_p }}

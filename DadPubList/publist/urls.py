@@ -5,5 +5,6 @@ urlpatterns = patterns('',
 	url(r'^$', views.index, name='index'),
 	url(r'^results/$', views.search, name='results'),
 	url(r'^addpub/$', views.add_pub, name='addpub'),
+	url(r'^listpubs/$', views.all_pubs, name='allpubs'),
 	#url(r'^results/$', views.results, name='results'),
 )

@@ -37,3 +37,9 @@ def add_pub(request):
 		pub_form = AddPub()
 
 	return render(request, 'publist/add_pub.html', {'pub_form': pub_form})
+
+def all_pubs(request):
+	counter = Pub.objects.all().count()
+	pubs = Pub.objects.all().order_by('name')
+
+	return render(request, 'publist/all_pubs.html', {'pubs': pubs, 'counter' : counter})

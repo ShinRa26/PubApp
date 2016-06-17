@@ -1,10 +1,16 @@
 {% extends 'publist/base.html' %}
 
+{% block title %}
+	<title>Publist</title>
+{% endblock %}
+
 {% block content %}
 	<div class="col-md-2 col-md-offset-5">
 		<form id="search-pub" method="get" action="{% url 'results' %}">
 			Search Pubs: <input type="text" name="q" id="id_q" value="{{ query }}"/>
 			<input type="submit" value="Submit"/> 
 		</form>
+		<a href="{% url 'addpub' %}">Add a New Pub</a><br />
+		<a href="{% url 'allpubs' %}">List all Pubs</a>
 	</div>
 {% endblock %}
