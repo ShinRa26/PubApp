@@ -1,16 +1,22 @@
 import os
 import webbrowser
+from threading import Thread
+
 
 def server():
-	os.system('sudo python manage.py runserver')
+	os.system('python manage.py runserver')
 	
 def browser():
 	url = "localhost:8000/publist/"
-	c = webbrowser.get('firefox')
+	c = webbrowser.get('chrome')
 	c.open(url)
 
 def main():
-	browser()
-	server()
+	startServer = Thread(target=server)
+	startBrowser = Thread(target=browser)
+
+	startBrowser.start()
+	startServer.start()
+
 
 main()
