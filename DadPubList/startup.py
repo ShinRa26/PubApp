@@ -8,8 +8,7 @@ def server():
 	
 def browser():
 	url = "localhost:8000/publist/"
-	c = webbrowser.get('chrome')
-	c.open(url)
+	
 
 def main():
 	startServer = Thread(target=server)
@@ -20,3 +19,4 @@ def main():
 
 
 main()
+
